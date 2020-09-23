@@ -1,0 +1,125 @@
+SC low-poly city;unlabeled
+Plane.001;unlabeled
+SC jardiniere 2;static; building
+SC European Hackberry medium.003;vegetation
+SC jardiniere 3;static;building
+SC prop - jardiniere 3.001;static;building
+SC traffic light individual;traffic light
+SC post clamp;static;pole
+SC street pole base;pole
+SC traffic light pole 1;pole
+SC street light pole 1;pole
+SC street light;pole
+SC air duct 1 - straight;static;building
+SC air duct 1 - turn;static;building
+SC air duct 1 - T;static;building
+SC air duct 1 - upward;static;
+SC antenna part 1;static
+SC lattice steel tower 1 red;static
+prop - lattice steel 1 red 2;static
+prop - lattice steel 1 red 3;static
+SC lattice steel tower 1 white;static
+prop - lattice steel 1 white 2;static
+prop - lattice steel 1 white 3;static
+SC vent 2;static
+SC vent 1;static
+SC water tower 2;static
+SC water tower;static
+SC billboard 2;building;wall
+SC street name 1;traffic sign
+SC pedestrian light 1;pole
+SC traffic light 1;traffic light
+SC street pole 1;pole
+prop - tree 1 - wood;vegetation
+prop - tree 1 - leaves;vegetation
+prop - billboard 1;building
+SC lattice steel 1 red;static
+SC lattice steel 1 white;static
+SC street bin 1;static
+SC flowerpot 1;static
+FL13_2.000;static
+SC plant - Geranium.000;static
+SC plant - Geranium 3.002;static
+SC plant - Geranium 3.001;static
+FL13_2.002;static
+FL13_2.001;static
+SC plant - Geranium.001;static
+SC jardiniere;static
+SC European Hackberry young.005;vegetation
+SC European Hackberry young.001;vegetation
+SC plant - European Hackberry young.001;vegetation
+SC plant - European Hackberry medium.001;vegetation
+SC phone booth;static
+SC prop - Phone booth - cable curve;static
+SC prop - Phone booth - cable element;static
+SC Fire hydrant;static
+SC prop - Fire hydrant - chain 3 curve;static
+SC prop - Fire hydrant - chain 2 curve;static
+SC prop - Fire hydrant - chain 1 curve;static
+SC prop - fire hydrant chain link - bevel;static
+SC prop - Fire hydrant - chain 3;static
+SC prop - Fire hydrant - chain 2;static
+SC prop - Fire hydrant - chain 1;static
+SC prop - fire hydrant chains central link - bevel;static
+SC prop - fire hydrant chain link;static
+SC prop - fire hydrant chains central link;static
+Sphere.001;static
+SC prop - Fire hydrant no upper boolean;static
+SC bus stop 1;building
+SC advert horizontal 2 by 1;building;static
+SC street bench 1;static
+SC plant - Geranium 3;static
+SC plant - Geranium 2;static
+SC plant - Geranium 1;static
+SC street mailbox;static
+SC plant - European Hackberry young;vegetation
+SC European Hackberry medium;vegetation
+SC building 1x1 1 - base;building
+SC building 1x1 1 - roof;building
+SC building 1x1 1 - middle;building
+SC building 1x1 2 - base left;building
+SC building 1x1 2 - roof right;building
+SC building 1x1 2 - middle right;building
+SC building 1x1 2 - base right;building
+SC building 1x1 2 - roof left;building
+SC building 1x1 2 - middle left;building
+SC building 1x1 3 - base;building
+SC building 1x1 3 - roof;building
+SC building 1x1 3 - middle;building
+SC building 1x1 4 - base;building
+SC building 1x1 4 - roof;building
+SC building 1x1 4 - middle;building
+SC building 2x2 1 - base;building
+SC building 2x2 1 - roof;building
+SC building 2x2 1 - middle;building
+SC building 2x2 2 - base;building
+SC building 2x2 2 - columns;building
+SC building 2x2 2 - roof;building
+SC building 2x2 2 - middle;building
+SC building 2x2 3 - base;building
+SC building 2x2 3 - roof;building
+SC building 2x2 3 - middle;building
+SC building 4x4 1 - base;building
+SC building 4x4 1 - separation1;building
+SC building 4x4 1 - roof;building
+SC building 4x4 1 - middle1;building
+SC building 4x4 1 - middle2;building
+SC building 4x4 2 - base;building
+SC building 4x4 2 - columns;building
+SC building 4x4 2 - roof;building
+SC building 4x4 2 - middle1;building
+SC building 4x4 2 - middle2;building
+SC building 4x4 3 - base;building
+SC building 4x4 3 - columns;building
+SC building 4x4 3 - middle1;building
+SC building 4x4 3 - middle3;building
+SC building 4x4 3 - middle2;building
+SC building 4x4 5 - base;building
+SC building 4x4 5 - body;building
+SC building 4x4 5 - side bars;building
+SC building 4x4 5 - roof;building
+SC road 1x1 1 straight ground;road
+SC road 1x1 1 turn ground;road
+SC road 1x1 1 deadend ground;road
+SC road 1x1 1 intersect3 ground;road
+SC road 1x1 1 intersect4 ground;road
