@@ -20,7 +20,7 @@ Provide an HDRI depicting a sky or the like and save it under ./HDRI/example.hdr
 Specify the name of the desired HDRI under sky_HDRI in [./setup.py](setup.py).
 
 ##### Car Models
-To fully function at least one carmodel has to be provided, to do this see [Adding a Carmodel](#Adding-a-Carmodel).
+To fully function at least one carmodel has to be provided, to do this see [Adding a Carmodel](#Adding-Models-of-Cars).
 ## Usage 
 Define the parameters of the desired city in [./setup.py](setup.py). Run [./setup.py](setup.py) on [./standard.blend](standard.blend) with
 ```shell
@@ -43,7 +43,7 @@ Because stereo-imaging is as of now not available only the intrinsic parameters 
 
 ## Modification Guidelines
 
-#### Adding a Carmodel
+#### Adding Models of Cars
 1. Provide Model in .blend file with one parent object (from now on referred to as main_object), for all meshes. For convenience save it under [./models/cars](models/cars).
 1. The name of all MESHES should contain the corresponding CityScapes-label. (At the moment only 'car', 'truck' supported.)
 1. In [./setup.py](setup.py) under car_models_info provide the information needed for Citynthesizer to process the model:
@@ -52,5 +52,5 @@ Because stereo-imaging is as of now not available only the intrinsic parameters 
     * name of the main_object
     * position of the camera relative to the car
 
-#### Adding Models for Buildings
+#### Adding Models of Buildings
 Buildings are incorporated via SceneCity and need to be linked manually to the scene. Efforts to incorporated easy asset ingestion are to be undertaken. Best practice to add custom models is as of now to save them under [./models/buildings](models/buildings), link them under link_assets() and add their main parent object in buildings_bl_objects both to be found in [./scripts/city_handler.py](scripts/city_handler.py).
