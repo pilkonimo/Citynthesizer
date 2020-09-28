@@ -11,10 +11,6 @@ import scripts.car_handler as car_handler
 import scripts.gt_rendering as gt_rendering
 
 
-
-
-
-
 #path_scene_city = os.path.join(blend_file_dir, "others", "SceneCity.zip")
 #bpy.ops.preferences.addon_install(filepath=path_scene_city)
 bpy.ops.preferences.addon_enable(module='scenecity')
@@ -31,29 +27,20 @@ logging.info('Started run at ' + datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 
 # create city
 HDRI_base_dir = os.path.join(blend_file_dir, "HDRI")
-sky_HDRI = "CGSkies_0342_free.hdr"
+sky_HDRI = "example.hdr"
 
 city_handler.create_city(grid_size=(20, 20), road_bl_objects=city_handler.road_bl_objects,
                          buildings_bl_objects=city_handler.buildings_bl_objects, data_dir=data_dir,
                          HDRI_base_dir=HDRI_base_dir, sky_HDRI=sky_HDRI)
 
-# define metadata for car models works in loop if structure is ./models/cars/Car0x/Car0x.blend for every car
+# Define metadata for car models. Structure should be of the form ./models/cars/Car0x.blend . 
 cars_base = os.path.join(blend_file_dir, "models", "cars")
 
-car_models_info = [
-    {'file path': os.path.join(cars_base, "Car01.blend"), 'scaling factor': 0.11, 'main object name': "Chocofur_Car_01", 'camera_pos': (0, 0, 0.15)},
-    {'file path': os.path.join(cars_base, "Car02.blend"), 'scaling factor': 0.11, 'main object name': "Chocofur_Car_02", 'camera_pos': (0, 0, 0.15)},
-    {'file path': os.path.join(cars_base, "Car03.blend"), 'scaling factor': 0.11, 'main object name': "Chocofur_Car_03", 'camera_pos': (0, 0, 0.15)},
-    {'file path': os.path.join(cars_base, "Car04.blend"), 'scaling factor': 0.11, 'main object name': "Chocofur_Car_06", 'camera_pos': (0, 0, 0.15)},
-    {'file path': os.path.join(cars_base, "Car05.blend"), 'scaling factor': 0.11, 'main object name': "Chocofur_Car_07", 'camera_pos': (0, 0, 0.15)},
-    {'file path': os.path.join(cars_base, "Car06.blend"), 'scaling factor': 0.11, 'main object name': "Chocofur_Car_08", 'camera_pos': (0, 0, 0.2)},
-    {'file path': os.path.join(cars_base, "Car07.blend"), 'scaling factor': 0.11, 'main object name': "Chocofur_Car_09", 'camera_pos': (0, 0, 0.15)},
-    {'file path': os.path.join(cars_base, "Car08.blend"), 'scaling factor': 0.11, 'main object name': "Chocofur_Truck_12", 'camera_pos': (0, 0, 0.15)},
-    {'file path': os.path.join(cars_base, "Car09.blend"), 'scaling factor': 0.11, 'main object name': "Chocofur_Car_11", 'camera_pos': (0, 0.02, 0.17)},
-    {'file path': os.path.join(cars_base, "Car10.blend"), 'scaling factor': 0.11, 'main object name': "Chocofur_Car_15", 'camera_pos': (0, 0.15, 0.15)},
-    {'file path': os.path.join(cars_base, "Car11.blend"), 'scaling factor': 0.08, 'main object name': "Chocofur_Free_Car_01", 'camera_pos': (0, 0, 0.15)},
-    {'file path': os.path.join(cars_base, "Car12.blend"), 'scaling factor': 0.12, 'main object name': "Chocofur_Free_Car_02", 'camera_pos': (0, 0, 0.15)}]
-
+# example configuration based on models provided under https://store.chocofur.com/search/cars
+# car_models_info = [
+#     {'file path': os.path.join(cars_base, "Car11.blend"), 'scaling factor': 0.08, 'main object name': "Chocofur_Free_Car_01", 'camera_pos': (0, 0, 0.15)},
+#     {'file path': os.path.join(cars_base, "Car12.blend"), 'scaling factor': 0.12, 'main object name': "Chocofur_Free_Car_02", 'camera_pos': (0, 0, 0.15)}]
+car_models_info = []
 
 render_worth, rendering_frames = car_handler.add_cars_to_city(car_models_info=car_models_info, data_dir=data_dir,
                                                               number_cars=10, min_number_cars=5)
