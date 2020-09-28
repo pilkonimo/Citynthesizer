@@ -8,7 +8,7 @@
 
 * Setup blender and its internal python according to /others/blender_python_requirements.txt with 
 ```shell
-$ pip install -r blender_python_requirements.txt
+path/to/blender_python$ pip install -r blender_python_requirements.txt
 ``` 
 * Install OpenEXR (see https://excamera.com/sphinx/articles-openexr.html) and add python bindings to blender's python
 * Either manually install SceneCity in blender, or optionally move it under the name 'SceneCity.zip' to /others and uncomment the installation lines in setup.py.
@@ -19,6 +19,8 @@ path/to/blender$ ./blender path/to/Citynthesizer/standard.blend -b -P path/to/Ci
 ```
 
 The generated ground_truth is stored under /ground_truth/current_run and additionally copied to /ground_truth/CityScapes_format. 
+
+Alternatively, the script to execute multiple is saved ./multiple_runs.sh.
 ## Similarity of Data to CityScapes
 
 Every run is additionally saved in a format similar to CityScapes (https://www.cityscapes-dataset.com/).
