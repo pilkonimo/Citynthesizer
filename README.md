@@ -20,7 +20,7 @@ Provide an HDRI depicting a sky or the like and save it under ./HDRI/example.hdr
 Specify the name of the desired HDRI under sky_HDRI in [./setup.py](setup.py).
 
 ##### Car Models
-To fully function at least one carmodel has to be provided, to do this see [Adding a Carmodel](#Adding-Models-of-Cars).
+To fully function at least one carmodel has to be provided, to do this see [Adding Models of Cars](#Adding-Models-of-Cars).
 ## Usage 
 Define the parameters of the desired city in [./setup.py](setup.py). Run [./setup.py](setup.py) on [./standard.blend](standard.blend) with
 ```shell
