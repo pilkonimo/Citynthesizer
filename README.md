@@ -3,7 +3,7 @@
 ## Requirements
 * Blender (v2.82a) with python (v3.7.4)
 * Requirements for blender internal python version under /others/blender_python_requirements.txt
-* SceneCity (v1.7.0)
+* SceneCity (v1.7.0) (Blender Add-On)
 ## Installation
 
 * Setup blender and its internal python according to /others/blender_python_requirements.txt with 
@@ -12,6 +12,15 @@ path/to/blender_python$ pip install -r blender_python_requirements.txt
 ``` 
 * Install OpenEXR (see https://excamera.com/sphinx/articles-openexr.html) and add python bindings to blender's python
 * Either manually install SceneCity in blender, or optionally move it under the name 'SceneCity.zip' to /others and uncomment the installation lines in setup.py.
+## Initial Configuration
+Citynthesizer does not ship with sky HDRIs nor with car models. 
+
+##### HDRIs
+Provide an HDRI depicting a sky or the like and save it under ./HDRI/example.hdr.
+Specify the name of the desired HDRI under sky_HDRI in [./setup.py](../blob/master/setup.py).
+
+##### Car Models
+To fully function at least one carmodel has to be provided, to do this see [Adding a Carmodel](#adding-a-Carmodel).
 ## Usage 
 Define the parameters of the desired city in setup.py. Run setup.py on standard.blend with
 ```shell
@@ -34,7 +43,7 @@ Because stereo-imaging is as of now not available only the intrinsic parameters 
 
 ## Modification Guidelines
 
-#### Adding a carmodel
+#### Adding a Carmodel
 1. Provide Model in .blend file with one parent object (from now on referred to as main_object), for all meshes. For convenience save it under /models/cars.
 1. The name of all MESHES should contain the corresponding CityScapes-label. (At the moment only 'car', 'truck' supported.)
 1. In setup.py in car_models_info provide the information needed for Citynthesizer to process the model:
