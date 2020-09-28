@@ -20,7 +20,7 @@ path/to/blender$ ./blender path/to/Citynthesizer/standard.blend -b -P path/to/Ci
 
 The generated ground_truth is stored under /ground_truth/current_run and additionally copied to /ground_truth/CityScapes_format. 
 
-Alternatively, the script to execute multiple is saved ./multiple_runs.sh.
+Alternatively, ./multiple_runs.sh can be used to execute multiple such runs. In this case data is only accumulated in the CityScapes format.
 ## Similarity of Data to CityScapes
 
 Every run is additionally saved in a format similar to CityScapes (https://www.cityscapes-dataset.com/).
