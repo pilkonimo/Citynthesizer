@@ -13,11 +13,11 @@ path/to/blender_python$ pip install -r blender_python_requirements.txt
 * Install OpenEXR (see https://excamera.com/sphinx/articles-openexr.html) and add python bindings to blender's python
 * Either manually install SceneCity in blender, or optionally move it under the name 'SceneCity.zip' to /others and uncomment the installation lines in setup.py.
 ## Initial Configuration
-Citynthesizer does not ship with sky HDRIs nor with car models. 
+Citynthesizer does not ship with sky HDRIs nor with car models due to licensing.
 
 ##### HDRIs
 Provide an HDRI depicting a sky or the like and save it under ./HDRI/example.hdr.
-Specify the name of the desired HDRI under sky_HDRI in [./setup.py](../blob/master/setup.py).
+Specify the name of the desired HDRI under sky_HDRI in [./setup.py](setup.py).
 
 ##### Car Models
 To fully function at least one carmodel has to be provided, to do this see [Adding a Carmodel](#adding-a-Carmodel).
