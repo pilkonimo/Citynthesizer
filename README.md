@@ -13,7 +13,7 @@ path/to/blender_python$ pip install -r blender_python_requirements.txt
 * Install OpenEXR (see https://excamera.com/sphinx/articles-openexr.html) and add python bindings to blender's python
 * Either manually install SceneCity in blender, or optionally move it under the name 'SceneCity.zip' to [./others](others) and uncomment the installation lines in [./setup.py](setup.py).
 ## Initial Configuration
-Citynthesizer does not ship with sky HDRIs nor with car models due to licensing.
+Citynthesizer does not ship with sky HDRIs nor with car models due to licensing. Both are needed for a fully functional pipeline.
 
 ##### HDRIs
 Provide an HDRI depicting a sky or the like and save it under ./HDRI/example.hdr.
@@ -46,9 +46,11 @@ Because stereo-imaging is as of now not available only the intrinsic parameters 
 #### Adding a Carmodel
 1. Provide Model in .blend file with one parent object (from now on referred to as main_object), for all meshes. For convenience save it under [./models/cars](models/cars).
 1. The name of all MESHES should contain the corresponding CityScapes-label. (At the moment only 'car', 'truck' supported.)
-1. In [./setup.py](setup.py) in car_models_info provide the information needed for Citynthesizer to process the model:
+1. In [./setup.py](setup.py) under car_models_info provide the information needed for Citynthesizer to process the model:
     * file path
     * scaling factor 
     * name of the main_object
     * position of the camera relative to the car
- 
+
+#### Adding Models for Buildings
+Buildings are incorporated via SceneCity and need to be linked manually to the scene. Efforts to incorporated easy asset ingestion are to be undertaken. Best practice to add custom models is as of now to save them under [./models/buildings](models/buildings), link them under link_assets() and add their main parent object in buildings_bl_objects both to be found in [./scripts/city_handler.py](scripts/city_handler.py).
