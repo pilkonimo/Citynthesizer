@@ -53,4 +53,4 @@ Because stereo-imaging is as of now not available only the intrinsic parameters 
     * position of the camera relative to the car
 
 #### Adding Models of Buildings
-Buildings are incorporated via SceneCity and need to be linked manually to the scene. Efforts to incorporated easy asset ingestion are to be undertaken. Best practice to add custom models is as of now to save them under [./models/buildings](models/buildings), link them under link_assets() and add their main parent object in buildings_bl_objects both to be found in [./scripts/city_handler.py](scripts/city_handler.py).
+Buildings are incorporated via SceneCity and need to be linked manually to the scene. Efforts to incorporated easy asset ingestion are to be undertaken. Best practice to add custom models is as of now to save them under [./models/buildings](models/buildings), link them under link_assets(), and add their main parent object in buildings_bl_objects both to be found in [./scripts/city_handler.py](scripts/city_handler.py).
