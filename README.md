@@ -1,6 +1,6 @@
 # Citynthesizer
 ##### A Blender-based data generation pipeline for urban driving. 
-This data generation pipeline generates synthetic data for image recognition research in the context of urban driving. 
+Citynthesizer is data generation pipeline that generates synthetic data for image recognition research in the context of urban driving. 
 It is based on Blender [[1]](#1), its rendering-engine Cycles [[2]](#2), and the Blender Add-On SceneCity [[3]](#3). 
 As of now, the pipeline supports ground truth for disparity maps and semantic segmentation and is heavily oriented along 
 the CityScapes [[4]](#4) dataset. 
