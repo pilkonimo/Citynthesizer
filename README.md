@@ -9,9 +9,20 @@ the CityScapes [[4]](#4) dataset.
 
 | image  | disparity | semantic segmentation |
 | ------------- | ------------- | ------------- |
-| [](examples/scenecity_000119_000029_leftImg8bit.png)  | [](examples/scenecity_000119_000029_disparity.png)    | [](examples/scenecity_000119_000029_gtFine_color.png)    |
-| [](examples/scenecity_000045_000010_leftImg8bit.png)  | [](examples/scenecity_000045_000010_disparity.png)    | [](examples/scenecity_000045_000010_gtFine_color.png)    |
+| ![](examples/scenecity_000119_000029_leftImg8bit.png)  | ![](examples/scenecity_000119_000029_disparity.png)    | ![](examples/scenecity_000119_000029_gtFine_color.png)    |
+| ![](examples/scenecity_000045_000010_leftImg8bit.png)  | ![](examples/scenecity_000045_000010_disparity.png)    | ![](examples/scenecity_000045_000010_gtFine_color.png)    |
 
+## Table of Contents
+[Citynthesizer](#citynthesizer)
+  * [Requirements](#requirements)
+  * [Installation](#installation)
+  * [Initial Configuration](#initial-configuration)
+  * [Usage](#usage)
+  * [Similarity of Data to CityScapes](#similarity-of-data-to-cityscapes---4----4-)
+  * [Modification Guidelines](#modification-guidelines)
+      - [Adding Models of Cars](#adding-models-of-cars)
+      - [Adding Models of Buildings](#adding-models-of-buildings)
+  * [References](#references)
 
 ## Requirements
 * Blender (v2.82a) with python (v3.7.4)
@@ -60,7 +71,14 @@ To which split ('train', 'test', 'val') a data set belongs is determined by rand
 The camera setting ([./data/camera.json](data/camera.json)) is taken from CityScapes [[4]](#4) 
 (originally: aachen_000000_000019_camera.json) and used to calculate disparity- from depth-maps. 
 It is additionally copied to comply with the CityScapes [[4]](#4) format.
-Because stereo-imaging is not available only the intrinsic parameters are implemented in blender.   
+Because stereo-imaging is not available only the intrinsic parameters are implemented in blender.
+
+**Labeling Conflicts**
+
+At the moment mainly two labeling conflicts arise with respect to the CityScapes dataset [[4]](#4), 
+if used out-of-the-box with SceneCity [[3]](#3).
+* Sidewalks are labeled as roads
+* Front- and backside of traffic signs are both labeled as such     
 
 ## Modification Guidelines
 
