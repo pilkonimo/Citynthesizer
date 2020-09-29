@@ -1,9 +1,13 @@
 # Citynthesizer
 ##### A Blender-based data generation pipeline for urban driving. 
+
+
 ## Requirements
 * Blender (v2.82a) with python (v3.7.4)
 * Requirements for blender internal python version under /others/blender_python_requirements.txt
 * SceneCity (v1.7.0) (Blender Add-On)
+* HDRI sky map
+* Model of vehicles to be incorporated
 ## Installation
 
 * Setup blender and its internal python according to [./others/blender_python_requirements.txt](others/blender_python_requirements.txt) with 
