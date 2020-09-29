@@ -18,7 +18,7 @@ the CityScapes [[4]](#4) dataset.
   * [Installation](#installation)
   * [Initial Configuration](#initial-configuration)
   * [Usage](#usage)
-  * [Similarity of Data to CityScapes](#similarity-of-data-to-cityscapes---4----4-)
+  * [Similarity of Data to CityScapes](#similarity-of-data-to-cityscapes)
   * [Modification Guidelines](#modification-guidelines)
       - [Adding Models of Cars](#adding-models-of-cars)
       - [Adding Models of Buildings](#adding-models-of-buildings)
@@ -61,7 +61,7 @@ The generated ground_truth is stored under ./ground_truth/current_run and additi
 
 Alternatively, [./multiple_runs.sh](multiple_runs.sh) can be used to execute multiple such runs. 
 In this case data is only accumulated in the CityScapes format.
-## Similarity of Data to CityScapes [[4]](#4)
+## Similarity of Data to CityScapes
 
 Every run is saved in a format similar to CityScapes [[4]](#4).
 The city is called 'scenecity' and every run corresponds to one sequence. 
