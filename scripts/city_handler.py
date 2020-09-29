@@ -210,8 +210,4 @@ def create_city(grid_size, road_bl_objects, buildings_bl_objects, data_dir, HDRI
 
 
 if __name__ == "__main__":
-    grid_size = (1, 1)
-    HDRI_base_dir = r"/home/max/Documents/BA/HDRI"
-    sky_HDRI = "CGSkies_0342_free.hdr"
-    data_base_dir = r"/home/max/Documents/BA/program/scripts/data"
-    create_city(grid_size, road_bl_objects, buildings_bl_objects, data_base_dir, HDRI_base_dir, sky_HDRI)
+    pass

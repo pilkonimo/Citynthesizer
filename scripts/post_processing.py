@@ -155,21 +155,4 @@ def store_current_run(gt_base_dir, data_dir, allowed_frames, city_scapes_gt_cate
 
 
 if __name__ == "__main__":
-    import re
-    current_gt_categories = ["image", "semantic_segmentation", "disparity", "semantic_segmentation_color"]
-    city_scapes_gt_categories = ["gtFine", "disparity", "camera", "leftImg8bit"]
-    data_dir = "/home/max/Documents/BA/deployment/data"
-    gt_base_dir = "/home/max/Downloads/ground_truth_top/ground_truth_filtered_folders_current"
-    logging.basicConfig(filename="/home/max/Downloads/ground_truth_top/ground_truth_filtered_folders_current/runs.log", filemode='a', level=logging.INFO)
-    r = re.compile(r'\d+')
-    for filtered_name in [name for name in os.listdir(os.path.join(gt_base_dir, 'current_run')) if name != 'all']:
-        logging.info('\n')
-        os.rename(src=os.path.join(gt_base_dir, 'current_run', filtered_name),
-                  dst=os.path.join(gt_base_dir, 'current_run', 'filtered'))
-        allowed_frames = [int(r.search(file_name).group(0)) for file_name in os.listdir(os.path.join(gt_base_dir, 'current_run', 'filtered', 'image'))]
-        check_city_scapes_dirs(gt_base_dir=gt_base_dir, categories=city_scapes_gt_categories)
-        store_current_run(gt_base_dir=gt_base_dir, data_dir=data_dir, allowed_frames=allowed_frames,
-                          city_scapes_gt_categories=city_scapes_gt_categories, current_gt_categories=current_gt_categories,
-                          test_perc=0.0, val_perc=0.0)
-        os.rename(src=os.path.join(gt_base_dir, 'current_run', 'filtered'),
-                  dst=os.path.join(gt_base_dir, 'current_run', filtered_name))
+    pass
