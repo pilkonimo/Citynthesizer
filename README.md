@@ -18,7 +18,7 @@ the CityScapes [[4]](#4) dataset.
   * [Installation](#installation)
   * [Initial Configuration](#initial-configuration)
   * [Usage](#usage)
-  * [How does it work?](#how-does-it-work?)
+  * [How does it work?](#how-does-it-work-)
       - [Construction of the City](#construction-of-the-city)
       - [Embedding of Dynamic Objects](#embedding-of-dynamic-objects)
       - [Rendering of the Images](#rendering-of-the-images)
