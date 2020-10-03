@@ -97,11 +97,12 @@ simulation in the light of the engineer's specific needs, trying to avoid the co
 unsuitable simulation. If the simulation passes, the models are linked and animated in the scene.
 #### Rendering of the Images
 The ego-vehicle carries the camera and is simultaneously the car with the highest priority. Ground truth along the path
-of the ego-vehicle is then rendered via Blender's [[1]](#1) render layers for instance by making use of bpycv [[6]](#6).
-Another filtering stage is entered that aims to filter suitable frames based on the information provided by the ground
-truth, e.g. minimum number of cars per frame, maximal distance between traffic participants. Only then the actual 
-rendering stage is initiated and the corresponding images are rendered. Next to the assumed savings in computational 
-costs, this helps to generate datasets tailored to the a specific definition for critical scenarios.
+of the ego-vehicle is then rendered via Blender's [[1]](#1) render layers making use, amongst others, of the library 
+bpycv [[6]](#6). Another filtering stage is entered that aims to filter suitable frames based on the information 
+provided by the ground truth, e.g. minimum number of cars per frame, maximal distance between traffic participants. 
+Only then the actual rendering stage is initiated and the corresponding images are rendered. 
+Next to the savings in computational costs, this helps to generate datasets tailored to a specific definition 
+for critical scenarios.
 
 ## Similarity of Data to CityScapes
 
