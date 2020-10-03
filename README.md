@@ -18,6 +18,10 @@ the CityScapes [[4]](#4) dataset.
   * [Installation](#installation)
   * [Initial Configuration](#initial-configuration)
   * [Usage](#usage)
+  * [How does it work?](#how-does-it-work?)
+      - [Construction of the City](#construction-of-the-city)
+      - [Embedding of Dynamic Objects](#embedding-of-dynamic-objects)
+      - [Rendering of the Images](#rendering-of-the-images)
   * [Similarity of Data to CityScapes](#similarity-of-data-to-cityscapes)
   * [Modification Guidelines](#modification-guidelines)
       - [Adding Models of Cars](#adding-models-of-cars)
@@ -60,7 +64,45 @@ The generated ground_truth is stored under ./ground_truth/current_run and additi
 /ground_truth/CityScapes_format. 
 
 Alternatively, [./multiple_runs.sh](multiple_runs.sh) can be used to execute multiple such runs. 
-In this case data is only accumulated in the CityScapes format.
+In this case data is only accumulated in the CityScapes [[4]](#4) format.
+## How does it work?
+Citynthesizer generates data via runs. Each run constructs one variant of the simulation and extracts the relevant data,
+which is subsequently accumulated as dataset only in the CityScapes [[4]](#4) format. Being a pipeline by design, the
+runs are of procedural nature and can be divided in four successive steps, namely the placement of static objects, 
+the embedding and animation of dynamic objects, the rendering of relevant scenarios, and post-processing.
+#### Construction of the City
+The City is constructed by making use of the Blender Python API [[5]](#5) and automating the steps implemented in 
+SceneCity [[3]](#3) to create a 'GridCity'. Furthermore a HDRI sky map is incorporated acting as the only light source 
+for the scene. By default only the assets coming with SceneCity [[3]](#3) are used to generate the city -  all with 
+equal probabilities. The detailed generation process is described in SceneCity's [[3]](#3) documentation, 
+[here](https://scenecitydoc.cgchan.com/grid-cities). Additionally provided, handmade, static assets would be
+incorporated in the SceneCity [[3]](#3) generation process. 
+#### Embedding of Dynamic Objects
+Dynamic objects are implemented by planning out the simulation in its entirety before implementing it as an animation
+via the Blender Python API [[5]](#5). The reasoning behind this design is to gain optimal entry points for filtering stages,
+saving computational costs. The city's groundplan is based on a grid comprised of different cells. To generate paths 
+for dynamic objects, each cell corresponding to a road object is portrayed as a node of an undirected graph, where an edge
+between two nodes exist, if the respective cells are adjacent. Each node located at the edge of the map serves as a 
+starting-/end-point. Paths are generated via random walk under the constraint that the most recently chosen edge is 
+not available for the next step.
+The desired number of paths to be generated in this way is defined in [./setup.py](setup.py) and limited by the number 
+of available starting-points. 
+
+If more than two paths are constructed, collision avoidance procedures based on the paths are implemented via a 
+priority queue, where the less prioritized car's path is truncated in the case of a collision. 
+
+At this stage the setup of the animation is filtered for the first time via criteria concerning the simulation in its 
+entirety, e.g. number of cars, ego vehicle's path length, etc. This aims to to estimate the suitability of the 
+simulation in the light of the engineer's specific needs, trying to avoid the computationally expensive setup of an 
+unsuitable simulation. If the simulation passes, the models are linked and animated in the scene.
+#### Rendering of the Images
+The ego-vehicle carries the camera and is simultaneously the car with the highest priority. Ground truth along the path
+of the ego-vehicle is then rendered via Blender's [[1]](#1) render layers for instance by making use of bpycv [[6]](#6).
+Another filtering stage is entered that aims to filter suitable frames based on the information provided by the ground
+truth, e.g. minimum number of cars per frame, maximal distance between traffic participants. Only then the actual 
+rendering stage is initiated and the corresponding images are rendered. Next to the assumed savings in computational 
+costs, this helps to generate datasets tailored to the a specific definition for critical scenarios.
+
 ## Similarity of Data to CityScapes
 
 Every run is saved in a format similar to CityScapes [[4]](#4).
@@ -116,3 +158,11 @@ URL https://www.cgchan.com/
 Cordts, Marius, et al. 
 "The cityscapes dataset for semantic urban scene understanding." 
 Proceedings of the IEEE conference on computer vision and pattern recognition. 2016.
+
+<a id="5">[5]</a> 
+Blender Python API (v2.82a) website.
+URL https://docs.blender.org/api/2.82a/
+
+<a id="6">[6]</a> 
+bpycv - computer vision and deep learning utils for blender. 
+URL https://github.com/DIYer22/bpycv
