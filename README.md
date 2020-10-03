@@ -22,7 +22,7 @@ the CityScapes [[4]](#4) dataset.
       - [Construction of the City](#construction-of-the-city)
       - [Embedding of Dynamic Objects](#embedding-of-dynamic-objects)
       - [Rendering of the Images](#rendering-of-the-images)
-  * [Similarity of Data to CityScapes](#similarity-of-data-to-cityscapes)
+  * [Similarity of the Data to CityScapes](#similarity-of-the-data-to-cityscapes)
   * [Modification Guidelines](#modification-guidelines)
       - [Adding Models of Cars](#adding-models-of-cars)
       - [Adding Models of Buildings](#adding-models-of-buildings)
@@ -104,7 +104,7 @@ Only then the actual rendering stage is initiated and the corresponding images a
 Next to the savings in computational costs, this helps to generate datasets tailored to a specific definition 
 for critical scenarios.
 
-## Similarity of Data to CityScapes
+## Similarity of the Data to CityScapes
 
 Every run is saved in a format similar to CityScapes [[4]](#4).
 The city is called 'scenecity' and every run corresponds to one sequence. 
